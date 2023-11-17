@@ -8,15 +8,15 @@ using MusicLibraryAPI.Data;
 using MusicLibraryAPI.Models;
 using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
-namespace MoviesAPI.Controllers
+namespace MusicLibraryAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MoviesController : ControllerBase
+    public class MusicLibraryController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public MoviesController(ApplicationDbContext context)
+        public MusicLibraryController(ApplicationDbContext context)
         {
             _context = context;
         }
