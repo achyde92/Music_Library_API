@@ -29,7 +29,7 @@ namespace MusicLibraryAPI.Controllers
             return StatusCode(200, song);
         }
 
-        // GET: api/Song/4
+        // GET: api/Song/
         [HttpGet("{id}", Name = "Get")]
         public IActionResult Get(int id)
         {
@@ -50,7 +50,7 @@ namespace MusicLibraryAPI.Controllers
             return StatusCode(201, song);
         }
 
-        //Put: api/Songs/7
+        //Put: api/Songs/
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Song UpdatedSong)
         {
@@ -69,7 +69,7 @@ namespace MusicLibraryAPI.Controllers
             return StatusCode(200, ExistingSong);
         }
 
-        //DELETE: api/Songs/5
+        //DELETE: api/Songs/
         [HttpDelete("{id}")]
         public IActionResult Delete(int Id)
         {
@@ -77,8 +77,31 @@ namespace MusicLibraryAPI.Controllers
             _context.Songs.Remove(removedId);
             _context.SaveChanges();
             return NoContent();
-
-            //sssssss
         }
+
+        ////PUT: api/Songs/1
+        //[HttpPut("{id}")]
+        //public IActionResult Like(int Id, [FromBody] Song LikedSong)
+        //{
+        //    var UnlikedSong = _context.Songs.Find(Id);
+
+        //    if (UnlikedSong != null)
+        //    {
+        //        UnlikedSong.Likes++;
+        //    }
+        //    else
+        //    {
+        //        return NotFound();
+        //    }
+        //    UnlikedSong.Likes = LikedSong.Likes;
+        //    UnlikedSong.Title = LikedSong.Title;
+        //    UnlikedSong.Genre = LikedSong.Genre;
+        //    UnlikedSong.Artist = LikedSong.Artist;
+        //    UnlikedSong.Album = LikedSong.Album;
+        //    UnlikedSong.ReleaseDate = LikedSong.ReleaseDate;
+        //    _context.Songs.Update(UnlikedSong);
+        //    _context.SaveChanges();
+        //    return StatusCode(200, UnlikedSong);
+        //}
     }
 }
